@@ -1,0 +1,6 @@
+ydl = youtube_dl.YoutubeDL()
+r = None
+url = "https://www.youtube.com/watch?v=NRFTST3uLm4"
+with ydl:
+    r = ydl.download([url])
+    print(r)
