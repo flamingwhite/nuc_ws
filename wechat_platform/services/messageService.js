@@ -28,6 +28,10 @@ const handleMsg = xml => {
    return Promise.resolve('欢迎订阅~ \n用法：\n1. 发送“音乐”或者“music”返回随机下载的视频\n2. 发送“音乐”或者“music”加上歌曲名会返回相应的歌曲，可能会卡！\n3. 发送“视频”或者“video”返回从instagram随机搜取得恶趣味小视频\n4. 发送“video”或者“视频”加视频名返回Youtube解码的视频，可能比较慢，需要下载和解码，如果不成功就在发送一次\n5. 发送“电影”或者“movie”加电影名返回豆瓣电影影评\n6. 发送“quote”或者“短句”返回一条短句或者心灵鸡汤');
 }
 
+const getTips = () => {
+    return Promise.resolve('用法：\n1. 发送“音乐”或者“music”返回随机下载的视频\n2. 发送“音乐”或者“music”加上歌曲名会返回相应的歌曲，可能会卡！\n3. 发送“视频”或者“video”返回从instagram随机搜取得恶趣味小视频\n4. 发送“video”或者“视频”加视频名返回Youtube解码的视频，可能比较慢，需要下载和解码，如果不成功就在发送一次\n5. 发送“电影”或者“movie”加电影名返回豆瓣电影影评\n6. 发送“quote”或者“短句”返回一条短句或者心灵鸡汤');
+}
+
 
 const getQuote = () => {
     return access.query('select * from quotes ORDER BY RAND() LIMIT 0,1')
@@ -121,6 +125,12 @@ const getFunnyVideo = videoName => {
 
 
 const textMsgConfig = [{
+    key:'tips',
+    fn: getTips
+}, {
+    key: '用法',
+    fn: getTips
+},{
     key: '短句',
     fn: getQuote
 }, {
@@ -152,10 +162,10 @@ const textMsgConfig = [{
     key: 'music',
     fn: getYoutubeMusic
 }, {
-    key:'lighton',
+    key:'on',
     fn: turnon
 }, {
-    key: 'lightoff',
+    key: 'off',
     fn: turnoff
 }];
 
@@ -170,7 +180,7 @@ const handleTextMsg = (xml, content) => {
         }
     }
 
-    return Promise.resolve('用法：\n1. 发送“音乐”或者“music”返回随机下载的视频\n2. 发送“音乐”或者“music”加上歌曲名会返回相应的歌曲，可能会卡！\n3. 发送“视频”或者“video”返回从instagram随机搜取得恶趣味小视频\n4. 发送“video”或者“视频”加视频名返回Youtube解码的视频，可能比较慢，需要下载和解码，如果不成功就在发送一次\n5. 发送“电影”或者“movie”加电影名返回豆瓣电影影评\n6. 发送“quote”或者“短句”返回一条短句或者心灵鸡汤');
+    return Promise.resolve('无法识别输入，显示用法回复“用法”或者”tips“');
 }
 
 module.exports.handleMsg = handleMsg;

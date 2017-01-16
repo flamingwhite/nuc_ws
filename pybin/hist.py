@@ -11,6 +11,7 @@ def print_top_history():
 		return acc
 
 	cmds = [' '.join(li.split()[1:]) for li in sys.stdin.readlines()]
+	print('{} history items found'.format(len(cmds)))
 	for cmd, ct in sorted(reduce(combine, cmds, {}).items(), key=lambda c: -c[1])[:n]:
 		print('{} <= {}'.format(ct, cmd))
 

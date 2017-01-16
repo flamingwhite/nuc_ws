@@ -1,6 +1,0 @@
-ydl = youtube_dl.YoutubeDL()
-r = None
-url = "http://91porn.com/view_video.php?viewkey=1dace0bcf268f5bb30a9"
-with ydl:
-    r = ydl.download([url])
-    print(r)
