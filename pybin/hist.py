@@ -1,7 +1,6 @@
 #!/usr/bin/env python3
 import subprocess
 import sys
-
 from functools import reduce
 
 def print_top_history():
