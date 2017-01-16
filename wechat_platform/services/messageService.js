@@ -10,6 +10,8 @@ let { addSongToDb, getSongById, getMusicUrl, getRandomSong } = require('../dao/s
 let { getYoutubeMusic } = require('./youtubeMusicService');
 let { getVideos } = require('./videoService');
 
+let {turnon, turnoff} = require('./lightService');
+
 let access = new SQLAccess();
 
 
@@ -149,6 +151,12 @@ const textMsgConfig = [{
 }, {
     key: 'music',
     fn: getYoutubeMusic
+}, {
+    key:'lighton',
+    fn: turnon
+}, {
+    key: 'lightoff',
+    fn: turnoff
 }];
 
 const handleTextMsg = (xml, content) => {

@@ -7,9 +7,9 @@ PATH=/home/yong/.virtualenvs/y3/bin:/home/yong/.pyenv/plugins/pyenv-virtualenv/s
 source ~/.virtualenvs/y3/bin/activate;
 cd /home/yong/Workspace/nineone;
 
-/home/yong/.virtualenvs/y3/bin/scrapy crawl nine &> ./logs/log-$(date '+%d-%m-%y')
+/home/yong/.virtualenvs/y3/bin/scrapy crawl nine &> ./logs/log-$(date '+%m-%d-%y')
 # python3 instagram_video_scrapy/downloadVideos.py &> ./logs/download-log-$(date '+%d-%m-%y')
-python3 nineone/videoDownloader.py &> ./logs/download-$(date '+%d-%m-%y')
+python3 nineone/videoDownloader.py &> ./logs/download-$(date '+%m-%d-%y')
 
 killall firefox
 killall Xvfb
