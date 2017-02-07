@@ -25,9 +25,9 @@ var displayError = function(err) {
     console.error(err);
 };
 
-api.groups()
-    .then(displayResult)
-    .done();
+// api.groups()
+//     .then(displayResult)
+//     .done();
 
 function turnon() {
 	api.setLightState(1, state.on())

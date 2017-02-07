@@ -16,6 +16,7 @@ let access = new SQLAccess();
 
 
 const handleMsg = xml => {
+    console.log('The message i GOt ');
     console.log(xml)
     let type = xml.MsgType;
     console.log('Message type is ===> ' + type);
@@ -26,10 +27,6 @@ const handleMsg = xml => {
     if (type == 'image') return handleImageMsg(xml);
 
    return Promise.resolve('欢迎订阅~ \n用法：\n1. 发送“音乐”或者“music”返回随机下载的视频\n2. 发送“音乐”或者“music”加上歌曲名会返回相应的歌曲，可能会卡！\n3. 发送“视频”或者“video”返回从instagram随机搜取得恶趣味小视频\n4. 发送“video”或者“视频”加视频名返回Youtube解码的视频，可能比较慢，需要下载和解码，如果不成功就在发送一次\n5. 发送“电影”或者“movie”加电影名返回豆瓣电影影评\n6. 发送“quote”或者“短句”返回一条短句或者心灵鸡汤');
-}
-
-const getTips = () => {
-    return Promise.resolve('用法：\n1. 发送“音乐”或者“music”返回随机下载的视频\n2. 发送“音乐”或者“music”加上歌曲名会返回相应的歌曲，可能会卡！\n3. 发送“视频”或者“video”返回从instagram随机搜取得恶趣味小视频\n4. 发送“video”或者“视频”加视频名返回Youtube解码的视频，可能比较慢，需要下载和解码，如果不成功就在发送一次\n5. 发送“电影”或者“movie”加电影名返回豆瓣电影影评\n6. 发送“quote”或者“短句”返回一条短句或者心灵鸡汤');
 }
 
 
@@ -125,12 +122,6 @@ const getFunnyVideo = videoName => {
 
 
 const textMsgConfig = [{
-    key:'tips',
-    fn: getTips
-}, {
-    key: '用法',
-    fn: getTips
-},{
     key: '短句',
     fn: getQuote
 }, {
@@ -180,7 +171,7 @@ const handleTextMsg = (xml, content) => {
         }
     }
 
-    return Promise.resolve('无法识别输入，显示用法回复“用法”或者”tips“');
+    return Promise.resolve('用法：\n1. 发送“音乐”或者“music”返回随机下载的视频\n2. 发送“音乐”或者“music”加上歌曲名会返回相应的歌曲，可能会卡！\n3. 发送“视频”或者“video”返回从instagram随机搜取得恶趣味小视频\n4. 发送“video”或者“视频”加视频名返回Youtube解码的视频，可能比较慢，需要下载和解码，如果不成功就在发送一次\n5. 发送“电影”或者“movie”加电影名返回豆瓣电影影评\n6. 发送“quote”或者“短句”返回一条短句或者心灵鸡汤');
 }
 
 module.exports.handleMsg = handleMsg;

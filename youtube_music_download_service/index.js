@@ -47,7 +47,7 @@ const downloadMp4 = (path, host) => {
 	}
 
 	console.log('not find video ', path, 'I will downloading it \n');
-	return promisify(child_process.exec, child_process)(`cd /home/yong/Dropbox/Youtube_media_programming/${host}; youtube-dl -o "%(title)s.%(ext)s" ${path}`);
+	return promisify(child_process.exec, child_process)(`cd /home/yong/Dropbox/Youtube_media_programming/${host}; youtube-dl --cookie cookies.txt -o "%(title)s.%(ext)s" ${path}`);
 }
 
 app.listen(5100, () => console.log('Youtube download app running on port 7000'));

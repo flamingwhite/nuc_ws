@@ -3,7 +3,7 @@ from .items import NineoneItem
 
 from .SqlUtil import SQLAccess
 
-dbaccess = SQLAccess(host='yont-nuc', db='nineone')
+dbaccess = SQLAccess(host='yong-nuc', db='nineone')
 
 class VideoDao:
 	def __init__(self, host='yong-nuc', user='root', passwd='1234', db='nineone'):
