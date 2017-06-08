@@ -5,15 +5,15 @@ let {curry} = require('ramda');
 let app = null;
 let connect = config => app = firebase.initializeApp(config);
 
-var config = {
-	apiKey: "AIzaSyDhghirxL19-LekWjgvfq4uLGXOO_zDeRo",
-	authDomain: "justdemo-ac305.firebaseapp.com",
-	databaseURL: "https://justdemo-ac305.firebaseio.com",
-	projectId: "justdemo-ac305",
-	storageBucket: "justdemo-ac305.appspot.com",
-	messagingSenderId: "338492799528"
-};
-firebase.initializeApp(config);
+// var config = {
+// 	apiKey: "AIzaSyDhghirxL19-LekWjgvfq4uLGXOO_zDeRo",
+// 	authDomain: "justdemo-ac305.firebaseapp.com",
+// 	databaseURL: "https://justdemo-ac305.firebaseio.com",
+// 	projectId: "justdemo-ac305",
+// 	storageBucket: "justdemo-ac305.appspot.com",
+// 	messagingSenderId: "338492799528"
+// };
+// firebase.initializeApp(config);
 
 
 // let fireStream = ref => Rx.Observable.fromEvent(ref, 'value');
