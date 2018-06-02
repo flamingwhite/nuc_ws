@@ -1,30 +1,33 @@
 let express = require('express');
 let wechat = require('wechat');
-let { handleMsg } = require('./services/messageService');
+let {
+	handleMsg
+} = require('./services/messageService');
+let url = require('url');
 
 
 var config = {
-    token: 'weixin',
-    appid: 'wxcc7e307e8a6570ee',
-    encodingAESKey: '7IHBWnUPPWZyci7hgjhkOw6BHW41py5GahCG5rPpZGs'
+	token: 'weixin',
+	appid: 'wxcc7e307e8a6570ee',
+	encodingAESKey: '7IHBWnUPPWZyci7hgjhkOw6BHW41py5GahCG5rPpZGs'
 };
 let app = express();
 
 app.use(express.query());
 
-app.get('/*', function(req, res) {
-    console.log(req.query)
-    let query = url.parse(req.url, true).query;
-    res.send(query.echostr)
+app.get('/*', function (req, res) {
+	console.log(req.query)
+	let query = url.parse(req.url, true).query;
+	res.send(query.echostr)
 });
 
 app.post('/*', wechat(config, (req, res, next) => {
-    console.log(req.body);
-    handleMsg(req.weixin).then(answer => {
-    	console.log('============================  RESPONSE BODY ==================================');
-    	console.log(answer)
-        res.reply(answer);
-    })
+	console.log(req.body);
+	handleMsg(req.weixin).then(answer => {
+		console.log('============================  RESPONSE BODY ==================================');
+		console.log(answer)
+		res.reply(answer);
+	})
 }));
 
 // app.post('/*', wechat(config, function (req, res, next) {
