@@ -1,15 +1,15 @@
 {
-  "name": "youtube_music_download_service",
+  "name": "node_web_crawlers",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "keywords": [],
   "author": "",
   "license": "ISC",
-  "dependencies": {
-    "express": "^4.14.0",
-    "mysqltool": "^1.0.0"
+  "devDependencies": {
+    "scraperjs": "^1.2.0"
   }
 }

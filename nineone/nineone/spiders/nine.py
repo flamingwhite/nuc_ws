@@ -46,5 +46,5 @@ class NineSpider(scrapy.Spider):
 		next = response.xpath('//div[@id="paging"]//a[last()]/@href').extract_first()
 		print(next)
 		self.page_count += 1
-		if(self.page_count < 100):
+		if(self.page_count < 150):
 			yield scrapy.Request(self.base_url + next, cookies=self.cookies)

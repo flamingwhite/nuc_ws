@@ -1,0 +1,17 @@
+#!/usr/bin/env node
+
+let fs = require('fs');
+let sh = require('shelljs');
+let program = require('commander');
+
+console.log('hello world!');
+
+// console.log(sh.ls())
+
+program
+	.version('0.0.1')
+	.option('-n, --name', 'My Name')
+	.option('-a, --age', 'Your Age')
+	.parse(process.argv)
+
+console.log(program.name, program.age);

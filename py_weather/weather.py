@@ -7,6 +7,7 @@ from fetch_sql_jokes import sqljokes
 # receivers = [('Yong', 'Wang', 'ever0702@gmail.com', '4219934'), ('Little Bamboo', 'Cutie', 'mengzhu1314@hotmail.com', '4180439')]
 # receivers = [('Yong', 'Wang', 'ever0702@gmail.com', '4219934'), ('Laura', 'Cheng', 'liangcheng240@gmail.com', '4273837')]
 # receivers = [('Yong', 'Wang', 'ever0702@gmail.com', '4219934'), ('Marie', 'Cute', 'limorui2013@gmail.com', '5185029')]
+#receivers = [('Yong', 'Wang', 'ever0702@gmail.com', '4219934'), ('Qiuya', 'Cute', 'louise.aiesec@gmail.com', '5809844')]
 
 url = 'http://api.openweathermap.org/data/2.5/forecast/daily?appid=792840d8260e3831cfd068930a84c7ea&units=metric&id='
 
@@ -21,10 +22,10 @@ jokes = sqljokes(5)
 
 def get_color(weather):
     if 'rain' in weather.lower():
-        return 'red'
+        return 'green'
     if 'clouds' in weather.lower():
         return 'orange'
-    return 'green'
+    return 'red'
 
 
 def get_temp_html(title, temp):
@@ -42,12 +43,18 @@ for firstName, lastName, email, zip, data in res:
     html = 'Dear {} <br><br>'.format(firstName)
 
 
-    html += "This is my last message and I will be destroyed after sending it. I hope you liked me... Keep warm and stay strong. Bye"
-    # html += "Just living is not enough. One must have sunshine, freedom and a little flower. Get yourself a flower today, or I will get you one"
-    # html += "Keep your face always toward the sunshine - and the shadows will fall behind you"
-    # html += "The world is not alwayws what we like. Let's make it better together"
-    # html += "I am here again sweetie. Let's start the day with a smile :-) "
-    # html += "I am a robot living in Yong's computer, and he calls me 'Mercury'. Yong created me last night to send weather report to you. So I need to wake up at 3:30am every morning to start working. I am scheduled to vanish in a few days to free some space. Before that, it's my great pleasure to serve you, as I was told you are pretty and adorable."
+    #html += "This is my last message and I will be destroyed after sending it. I hope you liked me... Keep warm and stay strong. Bye"
+    #html += "Just living is not enough. One must have sunshine, freedom and a little flower. Get yourself a flower today, or I will get you one"
+    #html += "Keep your face always toward the sunshine - and the shadows will fall behind you. I will be with you when you need me"
+    #html += "The world is not alwayws what we like. Let's make it better together"
+    #html += "I think I love you, pretty ^_^"
+    #html += "Sweetie, I like you a little more than I originally planned. Good morning"
+    #html += "It's a tired and long day. Wish you could give me a hug"
+    #html += "Will you make breakfast for Yong in the future? :)"
+    #html += "Yong was drunk and needs you. He must be missing you now. "
+    #html += "Simplicity is the ultimate sophistication... This is one of Yong's favoriate quotes :)"
+    #html += "I am here again sweetie. Let's start the day with a smile :-) "
+    #html += "I am a robot living in Yong's computer, and he calls me 'Mercury'. Yong created me last night to send weather report to you. So I need to wake up very early to start working. I am scheduled to disappear in a few days to free some space. Before that, it's my great pleasure to serve you, as I was told you are pretty and adorable."
     html +='<p/>'
     # html += "By the way, he is shy, but a good boy (DON'T tell him I told you those)";
 
@@ -57,11 +64,12 @@ for firstName, lastName, email, zip, data in res:
     #html += "'The only thing that can be prettier than you is you from tomorrow', cited from a CS guy. Good morning"
     #html += "Good morning, I think that boy wants to see you everyday. Life is not always what we like. Let's make it better together :-)"
     #html += "Havn't heard from you for a while. Hope you are doing good. Let's start the day with a amile :-)"
-    # html += "It's my mission and great pleasure to serve you. This is my last message. I will be destroyed within a minute after sending it. I hope you liked me. I like you. Bye."
+    html += "It's my mission and great pleasure to serve you. I finally get here and this is my last message. I will be taking a long vocation after sending it. I hope you liked me. I like you, so does Yong. May the sunshine and flower always be with you."
 
 
     # html += "It's my mission and great pleasure to serve you. This is my last message. I will be destroyed within a minute after sending it. I hope you liked me. I love you... so does he... I will remember you in my heart before it's melted. Don't miss me. Bye..."
-    # html += "Sweetie, if you are not that busy in the future, join Yong with the workout!  Good morning"
+    #html += "Sweetie, if you are not that busy in the future, join Yong with the workout!  Good morning"
+    #html += "Wake up sweetie, I think Yong's missing you now as I saw smile on his face"
     # html += "'The only thing that can be prettier than you is you from tomorrow', cited from a CS guy. Good morning"
     #html += "Sweetie, Yong told me he likes you more every day. But he also feels dumber when facing the girl he likes. It needs some time to pass that stage. He wants to have a drink with you again. If you sometimes don't think he is the right one for you, just tell him. Otherwise, you will be the only girl in his mind."
     # html += "Sweetie, Yong told me he was like a boy in front of you. That's really funny because he is more like a dictator in front of us. hahaha. "
@@ -95,9 +103,11 @@ for firstName, lastName, email, zip, data in res:
         html += '<div style="margin-left:25px"><b>Humidity</b>: {}% </div><br><br>'.format(item['humidity'])
 
     html += '<p/>'
-    # html += "<b>I was told you were not in a good mood. So he also wants me to send some jokes to make you happy. I don't have much sense of humor (and so does he!). So I created quite a few web spiders to scrape jokes from the web. I don't know if they are funny, but hope you like them :)</b>"
-    # html += "<b>I am sad, but I have to get my job done. Last few jokes for you, my love</b>"
-    html += "<b>My last few jokes</b>"
+    #html += "<b>I was told you are a sweet girl who like laughing. So he also wants me to send some jokes to make you happy. I don't have much sense of humor (and so does he!). So I created quite a few web spiders to scrape jokes from the web. I don't know if they are funny, but hope you like them :)</b>"
+    html += "<b>Last few jokes for you, sweetheart</b>"
+    #html += "<b>I don't wanna go, but I have to get my job done. Last few jokes for you, sweetheart</b>"
+    #html += "<b>My last few jokes</b>"
+    #html += "<b>Some more jokes!</b>"
 
     # html += '<video poster="//i.imgur.com/4lzz522h.jpg" preload="auto" autoplay="autoplay" muted="muted" loop="loop" webkit-playsinline="" style="width: 720px; height: 404px;"> <source src="//i.imgur.com/4lzz522.mp4" type="video/mp4"> </video>'; 
     
